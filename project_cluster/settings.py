@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'project_cluster.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'DB1', # имя_вашей_базы_данных
+        'USER': 'postgres', # имя_пользователя
+        'PASSWORD': 'root', # пароль
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
