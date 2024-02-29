@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             </nav>
-            <h3 class="m-3">Муниципальные образования</h3>
+            <h3 class="m-3">Уровень занятости населения</h3>
             <form method="get" class="form-inline">
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary ml-2">Отфильтровать</button>
@@ -42,19 +42,19 @@
                         <th>Название региона</th>
                         <th>Федеральный округ</th>
                         <th>Индикатор</th>
-                        <th>Количество(ед.)</th>
+                        <th>Количество(%)</th>
                         <th>Год</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% block content %}
-                    {% for edu in edus %}
+                    {% for empl in employments %}
                     <tr>
-                        <td>{{ edu.region }}</td>
-                        <td>{{ edu.district }}</td>
-                        <td>{{ edu.indicator }}</td>
-                        <td>{{ edu.amount }}</td>
-                        <td>{{ edu.year }}</td>
+                        <td>{{ empl.region }}</td>
+                        <td>{{ empl.district }}</td>
+                        <td>{{ empl.indicator }}</td>
+                        <td>{{ empl.percentage }}</td>
+                        <td>{{ empl.year }}</td>
                     </tr>
                     {% endfor %}
                 {% endblock content %}
